@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
 
@@ -8,20 +9,23 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    
 
         {% if title %}
-        <title>Blog - {{title}}</title>
+        <title>Pritam's Blog - {{title}}</title>
         {% else %}
-        <title>Blog title</title>
+        <title>Pritam's Blog title</title>
         {% endif %}
     </head>
-    <body>
+    <body style="background-color: #F64C72;">
 
         <header class="site-header">
-            <nav class="navbar navbar-expand-md navbar-brand navbar-dark fixed-top" style="background-color: #000080;">
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #000080;">
               <div class="container">
-                <a class="navbar-brand mr-4" href="/">Pritam Blog</a>
+                
+                <a class="navbar-brand mr-4" href="/"> 
+                  <img src="static/profile_pics/pritam_logo.jpg" alt="logo" style="width: 40px" /> 
+                  Pritam's Blog</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -33,6 +37,7 @@
                   <!-- Navbar Right Side -->
                   <div class="navbar-nav">
                     {% if current_user.is_authenticated %}
+                      <span class="badge badge-success m-3">Online</span>
                       <a class="nav-item nav-link" href="{{ url_for('posts.new_post') }}">New Post</a> 
                       <a class="nav-item nav-link" href="{{ url_for('users.account') }}">Account</a>
                       <a class="nav-item nav-link" href="{{ url_for('users.logout') }}">Logout</a>
@@ -41,8 +46,6 @@
                       <a class="nav-item nav-link" href="{{ url_for('users.register') }}">Register</a>
                     {% endif %}
                   </div>
-
-
 
                 </div>
               </div>
@@ -66,13 +69,13 @@
               </div>
               <div class="col-md-4">
                 <div class="content-section">
-                  <h3>Our Sidebar</h3>
-                  <p class='text-muted'>You can put any information here you'd like.
+                  <h3>Notifications</h3>
+                  <p class='text-muted'>This site is in development.
                     <ul class="list-group">
                       <li class="list-group-item list-group-item-light">Latest Posts</li>
-                      <li class="list-group-item list-group-item-light">Announcements</li>
-                      <li class="list-group-item list-group-item-light">Calendars</li>
-                      <li class="list-group-item list-group-item-light">etc</li>
+                      <li class="list-group-item list-group-item-light">Feedback me on pritam7387@hotmail.com</li>
+                      <li class="list-group-item list-group-item-light">27-March-2021</li>
+                      <li class="list-group-item list-group-item-light">Upcoming updates!</li>
                     </ul>
                   </p>
                 </div>
@@ -85,6 +88,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
     </body>
 </html>
